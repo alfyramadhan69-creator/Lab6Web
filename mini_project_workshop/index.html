@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran Workshop</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="kartu">
+        <h1>Pendaftaran Workshop Web</h1>
+        <p class="sub">Isi data berikut untuk mendaftar pada salah satu sesi workshop.</p>
+
+        <form id="formWorkshop" novalidate>
+            <div class="grup">
+                <label for="nama">Nama lengkap</label>
+                <input id="nama" name="nama" type="text" autocomplete="name" maxlength="50">
+                <p class="error" id="errorNama" aria-live="polite"></p>
+            </div>
+
+            <div class="grup">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email">
+                <p class="error" id="errorEmail" aria-live="polite"></p>
+            </div>
+
+            <div class="grup">
+                <label for="sesi">Pilihan sesi</label>
+                <select id="sesi" name="sesi">
+                    <option value="">-- Pilih sesi --</option>
+                    <option value="Sesi 1: Dasar HTML dan CSS (Sabtu, 09.00)">Sesi 1: Dasar HTML dan CSS (Sabtu, 09.00)</option>
+                    <option value="Sesi 2: JavaScript DOM (Sabtu, 13.00)">Sesi 2: JavaScript DOM (Sabtu, 13.00)</option>
+                    <option value="Sesi 3: Git dan GitHub (Minggu, 09.00)">Sesi 3: Git dan GitHub (Minggu, 09.00)</option>
+                </select>
+                <p class="info" id="infoSesi" aria-live="polite"></p>
+                <p class="error" id="errorSesi" aria-live="polite"></p>
+            </div>
+
+            <div class="grup">
+                <label for="catatan">Catatan (opsional)</label>
+                <textarea id="catatan" name="catatan" rows="3" maxlength="150"></textarea>
+                <p class="hitung">Jumlah karakter: <span id="jumlahKarakter">0</span>/150</p>
+            </div>
+
+            <section class="ringkasan" aria-live="polite">
+                <h2>Ringkasan input</h2>
+                <ul>
+                    <li>Nama: <span id="ringNama">-</span></li>
+                    <li>Email: <span id="ringEmail">-</span></li>
+                    <li>Sesi: <span id="ringSesi">-</span></li>
+                </ul>
+            </section>
+
+            <div class="aksi">
+                <button type="submit" class="utama">Daftar</button>
+                <button type="button" id="tombolReset" class="sekunder">Reset</button>
+            </div>
+        </form>
+
+        <p id="pesanSukses" class="sukses" aria-live="polite"></p>
+    </main>
+</body>
+</html>
